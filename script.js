@@ -1,6 +1,6 @@
 // ============= CONFIGURATION =============
 const CONFIG = {
-    GEMINI_API_KEY: 'YOUR_GEMINI_API_KEY_HERE', // ← ضع مفتاحك هنا
+    GEMINI_API_KEY: 'AIzaSyCfCzVsEoJJZRIsj_fzWlk0ZtS_DzVd5SI', // ← ضع مفتاحك هنا
     GEMINI_MODEL: 'gemini-1.5-flash',
 };
 
