@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Imperium AI - Where Data Becomes Power</title>
-    <meta name="description" content="The Imperium AI - Building the future of artificial intelligence through innovative, powerful, and accessible AI solutions.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>The Imperium AI | إمبراطورية الذكاء الاصطناعي</title>
+    <meta name="description" content="نبني مستقبل الذكاء الاصطناعي - AI Chatbots, Automation, AI Agents">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="stars"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
-    </div>
+    <div class="neural-bg" id="neuralBg"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-crown"></i>
-                <span>THE IMPERIUM</span>
+                <span class="crown">👑</span>
+                <span class="logo-text">THE IMPERIUM</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#tech">Tech</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#about">عن الإمبراطورية</a></li>
+                <li><a href="#contact">تواصل</a></li>
+                <li><a href="#" class="lang-switch" onclick="toggleLang()">EN</a></li>
             </ul>
-            <div class="menu-toggle">
+            <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -40,25 +43,36 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="crown-icon">
-                <i class="fas fa-crown"></i>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-main">THE IMPERIUM</span>
-                <span class="title-sub">AI</span>
-            </h1>
-            <p class="hero-tagline">Where Data Becomes Power</p>
+            <div class="crown-3d">👑</div>
+            <h1 class="hero-title">THE IMPERIUM</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">إمبراطورية الذكاء الاصطناعي</p>
             <p class="hero-description">
-                Building the future of artificial intelligence through innovative, 
-                powerful, and accessible AI solutions.
+                نبني مستقبل الأعمال بحلول الذكاء الاصطناعي المتقدمة
+                <br>
+                AI Chatbots • Automation • AI Agents • Consulting
             </p>
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Explore Services
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Contact Us
-                </a>
+                <button class="btn btn-primary" onclick="scrollTo('services')">
+                    <i class="fas fa-rocket"></i> اكتشف الخدمات
+                </button>
+                <button class="btn btn-secondary" onclick="openChat()">
+                    <i class="fas fa-comments"></i> تحدث مع AI
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">+ عميل</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">/7 دعم</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">% رضا</div>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -66,179 +80,172 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">About Us</span>
-                <h2 class="section-title">Pioneering AI Innovation</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon"><i class="fas fa-brain"></i></div>
-                    <h3>Innovation</h3>
-                    <p>Pushing the boundaries of what AI can achieve with cutting-edge research and development.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Power</h3>
-                    <p>Delivering powerful AI solutions that transform businesses and drive real-world results.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Accessibility</h3>
-                    <p>Making advanced AI technology accessible to everyone, from startups to enterprises.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Section -->
     <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <div class="title-underline"></div>
+        <div class="section-header">
+            <h2 class="section-title">خدمات الإمبراطورية</h2>
+            <p class="section-subtitle">حلول AI متكاملة لتطوير أعمالك</p>
+        </div>
+        <div class="services-grid">
+            
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI Chatbots</h3>
+                <p>روبوتات محادثة ذكية تخدم عملاءك 24/7 بكفاءة عالية</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> دعم متعدد اللغات</li>
+                    <li><i class="fas fa-check"></i> تكامل مع موقعك</li>
+                    <li><i class="fas fa-check"></i> تعلم تلقائي</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('Chatbot')">اطلب الآن</button>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Solutions</h3>
-                    <p>Custom AI models and intelligent integrations tailored to your business needs.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom AI Models</li>
-                        <li><i class="fas fa-check"></i> Machine Learning</li>
-                        <li><i class="fas fa-check"></i> Neural Networks</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Analytics</h3>
-                    <p>Transform your data into actionable insights with advanced analytics tools.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Big Data Processing</li>
-                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
-                        <li><i class="fas fa-check"></i> Real-time Insights</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
+
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Automation</h3>
+                <p>أتمتة المهام المتكررة وتوفير ساعات من العمل اليدوي</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> أتمتة كاملة</li>
+                    <li><i class="fas fa-check"></i> ربط الأنظمة</li>
+                    <li><i class="fas fa-check"></i> تقارير تلقائية</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('Automation')">اطلب الآن</button>
+            </div>
+
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-brain"></i></div>
+                <h3>AI Agents</h3>
+                <p>وكلاء ذكاء اصطناعي مخصصين ينفذون مهامك المعقدة</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> تخصيص كامل</li>
+                    <li><i class="fas fa-check"></i> ذكاء متقدم</li>
+                    <li><i class="fas fa-check"></i> استقلالية تامة</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('AI Agent')">اطلب الآن</button>
+            </div>
+
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>AI Consulting</h3>
+                <p>استشارات احترافية لتطبيق AI في أعمالك</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> تحليل احتياجاتك</li>
+                    <li><i class="fas fa-check"></i> استراتيجية مخصصة</li>
+                    <li><i class="fas fa-check"></i> دعم مستمر</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('Consulting')">اطلب الآن</button>
+            </div>
+
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h3>AI Websites</h3>
+                <p>مواقع احترافية مدعومة بالذكاء الاصطناعي</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> تصميم فخم</li>
+                    <li><i class="fas fa-check"></i> AI مدمج</li>
+                    <li><i class="fas fa-check"></i> سرعة فائقة</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('Website')">اطلب الآن</button>
+            </div>
+
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>AI Analytics</h3>
+                <p>تحليلات ذكية لبياناتك واتخاذ قرارات مدروسة</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> تقارير ذكية</li>
+                    <li><i class="fas fa-check"></i> توقعات دقيقة</li>
+                    <li><i class="fas fa-check"></i> رؤى عميقة</li>
+                </ul>
+                <button class="btn btn-outline" onclick="orderService('Analytics')">اطلب الآن</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="section-title">عن الإمبراطورية</h2>
+                <p class="about-text">
+                    <strong>The Imperium AI</strong> ليست مجرد شركة، بل إمبراطورية تقنية تقود ثورة الذكاء الاصطناعي.
+                </p>
+                <p class="about-text">
+                    نؤمن بأن AI هو مستقبل الأعمال، ومهمتنا نقل عملك من العصر التقليدي إلى عصر الذكاء الاصطناعي بسلاسة وفعالية.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
                         <i class="fas fa-shield-alt"></i>
+                        <h4>أمان كامل</h4>
+                        <p>بياناتك محمية بأعلى معايير الأمان</p>
                     </div>
-                    <h3>AI Security</h3>
-                    <p>Secure and ethical AI systems with enterprise-grade protection.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Threat Detection</li>
-                        <li><i class="fas fa-check"></i> Ethical AI</li>
-                        <li><i class="fas fa-check"></i> Data Protection</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="about-feature">
+                        <i class="fas fa-bolt"></i>
+                        <h4>سرعة فائقة</h4>
+                        <p>حلول سريعة وفعالة</p>
                     </div>
-                    <h3>Web Platforms</h3>
-                    <p>Modern AI-powered web applications built with the latest technologies.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Responsive Design</li>
-                        <li><i class="fas fa-check"></i> AI Integration</li>
-                        <li><i class="fas fa-check"></i> Cloud Deployment</li>
-                    </ul>
+                    <div class="about-feature">
+                        <i class="fas fa-headset"></i>
+                        <h4>دعم 24/7</h4>
+                        <p>فريقنا معك في أي وقت</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section id="tech" class="tech-stack">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Tech Stack</span>
-                <h2 class="section-title">Technologies We Master</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-react"></i>
-                    <span>React</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Node.js</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-brain"></i>
-                    <span>TensorFlow</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-microchip"></i>
-                    <span>OpenAI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="100">0</h3>
-                    <p>AI Models</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="50">0</h3>
-                    <p>Projects</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="24">0</h3>
-                    <p>Support Hours</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="99">0</h3>
-                    <p>Success Rate %</p>
-                </div>
+            <div class="about-visual">
+                <div class="orb"></div>
+                <div class="orb-glow"></div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Get In Touch</span>
-                <h2 class="section-title">Connect With Us</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="contact-grid">
-                <a href="https://theimperium.ai" class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Website</h3>
-                    <p>theimperium.ai</p>
-                </a>
-                <a href="mailto:theimperium.ai.official@gmail.com" class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email</h3>
-                    <p>theimperium.ai.official@gmail.com</p>
-                </a>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Location</h3>
-                    <p>Saudi Arabia 🇸🇦</p>
+        <div class="section-header">
+            <h2 class="section-title">تواصل مع الإمبراطورية</h2>
+            <p class="section-subtitle">جاهزون لخدمتك في أي وقت</p>
+        </div>
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="sendMessage(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="اسمك الكريم" required id="name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="البريد الإلكتروني" required id="email">
+                </div>
+                <div class="form-group">
+                    <select required id="service">
+                        <option value="">اختر الخدمة</option>
+                        <option>AI Chatbot</option>
+                        <option>Automation</option>
+                        <option>AI Agent</option>
+                        <option>Consulting</option>
+                        <option>Website</option>
+                        <option>Analytics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="رسالتك..." rows="5" required id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> أرسل الآن
+                </button>
+            </form>
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <a href="#" target="_blank">@theimperium</a>
+                </div>
+                <div class="info-card">
+                    <i class="fab fa-twitter"></i>
+                    <h4>Twitter / X</h4>
+                    <a href="#" target="_blank">@theimperiumai</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <a href="mailto:contact@theimperium.ai">contact@theimperium.ai</a>
                 </div>
             </div>
         </div>
@@ -246,22 +253,51 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-crown"></i>
-                    <span>THE IMPERIUM AI</span>
-                </div>
-                <p class="footer-tagline">Where Data Becomes Power</p>
-                <div class="footer-social">
-                    <a href="https://github.com/theimperium-ai" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="mailto:theimperium.ai.official@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                    <a href="https://theimperium.ai" class="social-link"><i class="fas fa-globe"></i></a>
-                </div>
-                <p class="footer-copy">© 2026 The Imperium AI. All rights reserved. 👑</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="crown">👑</span>
+                <span>THE IMPERIUM</span>
             </div>
+            <p>© 2026 The Imperium AI. جميع الحقوق محفوظة.</p>
+            <p class="footer-tagline">Building the Future of AI</p>
         </div>
     </footer>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-toggle" onclick="toggleChat()">
+        <i class="fas fa-comments"></i>
+        <span class="chat-badge">AI</span>
+    </div>
+
+    <div class="chatbot-window" id="chatbot">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="crown">👑</span>
+                <div>
+                    <h3>Imperium AI</h3>
+                    <span class="status">● متصل</span>
+                </div>
+            </div>
+            <button class="chat-close" onclick="toggleChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-avatar">👑</div>
+                <div class="message-content">
+                    أهلاً بك في إمبراطورية الذكاء الاصطناعي! 🚀
+                    <br>كيف يمكنني خدمتك اليوم؟
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="اكتب رسالتك..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendChatMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
